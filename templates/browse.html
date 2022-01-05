@@ -1,0 +1,40 @@
+{% extends "layoutV2.html" %}
+
+{% block title %}
+Browse
+{% endblock %}
+
+{% block content %}
+<div class = "col-sm-12" style = "margin: auto">
+    <p>Browse garden stuff:</p>
+    <div class="table-responsive">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" class = "col-sm-2"></th>
+            <th scope="col " class = "col-sm-2" style = "text-align: left">Name</th>
+            <th scope="col" class = "col-sm-2">Price</th>
+            <th scope="col" class = "col-sm-2">Temperature Strength</th>
+            <th scope="col" class = "col-sm-2">Pressure Strength</th>
+            <th scope "col" class = "col-sm-2">Wind Strength</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {%for gardenItem in gardenItems%}
+            <th scope="row">
+                <img src="static/{{gardenItem["image"]}}.png" class = "browseImages">
+                </th>
+            <td>{{gardenItem["name"]}}</td>
+            <td>{{gardenItem["price"]}} Mars Coin</td>
+            <td>{{gardenItem["tempstrength"]}}</td>
+            <td>{{gardenItem["pressurestrength"]}}</td>
+            <td>{{gardenItem["windstrength"]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layoutV2.html" %}
+
+{% block title %}
+Sell
+{% endblock %}
+
+{% block content %}
+<div class = "col-sm-8" style = "margin: auto">
+    <p>Who are you selling from your garden?</p>
+    <form action="/sell" method="post" >
+        <select class ="form-select mx-auto w-auto" name="petname" style = "margin: 20px">
+                
+            <option disabled selected ="Plant's pet name">Plant's pet name</option>
+            {% for petname in petnames %}
+            <option value= {{petname}} >{{ petname }}</option>
+            {% endfor %}
+        </select>
+        
+        <br><button class="btn btn-primary" type="submit" style = "margin-top: 20px">Sell</button><br>
+    </form>
+    </div>
+{% endblock %}

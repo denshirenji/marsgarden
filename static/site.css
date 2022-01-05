@@ -1,0 +1,137 @@
+.body-content {
+    padding: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+}
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* Constrain images on small screens */
+    max-width: 100%;
+}
+
+.navbar {
+    background: #e69898
+}
+
+.navbar-custom {
+    background: #fc6652
+}
+
+.nav-item::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 2px;
+    background: #fec400;
+    transition: 0.4s
+}
+
+.nav-item:hover::after {
+    width: 100%
+}
+
+.nav-item{
+    color: #000000;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show>.nav-link,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #fec400;
+}
+
+.nav-link {
+    padding: 25px 5px;
+    color: #000000;
+    transition: 0.2s
+}
+
+.body {
+    background-image: url("mars-june-2021-persevance-pano.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.footer {
+    background: #fc6652;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    font-size: small;
+    text-align: center;
+    display: block;
+    margin: auto;
+    height: 40px;
+}
+
+.marsimagehomepage {
+    display: block;
+    height: 50%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.apology {
+    display: block;
+    height: 50%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.browseImages {
+    display: block;
+    height: 50%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table {
+    background-color: transparent;
+    border-color:  #fc6652;
+    
+}
+
+.tableGarden {
+    background-color: transparent;
+    border-color: transparent;
+
+}
+
+.gardenImage {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    margin-top: 15px
+}

@@ -1,0 +1,50 @@
+{% extends "layoutV2.html" %}
+
+{% block title %}
+My garden
+{% endblock %}
+
+{% block content %}
+<div class = "col-sm-8" style = "margin: auto">
+<h2 style ="text-align: center">Here is your garden!</h2>
+<br>
+
+<div class="row align-items-start">
+    <div class="col" >
+        <div style="text-align: center">
+        <p> <b>Today's weather:</b></p>
+        <p> <b>Date:</b> Sol # {{key}}</p>
+        <P> <b>Temperature:</b> {{temperature}} degrees Celsius</p>
+        <p> <b>Pressure:</b> {{pressure}} Pascals</p>
+        <p> <b>Wind speed:</b> {{windSpeed}} meters per second</p>
+        </div>
+    </div>
+
+    <div class="col" style="text-align: center">
+        <p> <b> Username: </b> </p>
+        <p> <b> Mars Coin: </b> {{points}} coin</p>
+        <p> <b> Garden items: </b> {{gardenQuantity}} items </p>
+        <p> <b> Living garden items: </b> {{gardenQuantityLiving}} items </p>
+        <p> <b> Oldest plant: </b> {{originalMarker}} days</p>
+
+    </div>
+    
+
+    <div class="table-responsive">
+        <table class="tableGarden" class="table-responsive">
+
+    <div class="row" class ="table-responsive tableGarden form-group"> 
+        {%for myGardenSpecificInfo in myGardenSpecificInfos%}
+        <div class="col-4 form-group" style = "min-width: 250px"><img src="static/{{myGardenSpecificInfo[3]}}.png" class = "gardenImage"> Petname: {{myGardenSpecificInfo[0]}}<br> Level: {{myGardenSpecificInfo[1]}} <br> Selling price: {{myGardenSpecificInfo[2]}} mars coin</div>
+        {% endfor %}
+    </div>
+
+        </table>
+    </div>
+
+
+</div>
+</div>
+
+
+{% endblock %}

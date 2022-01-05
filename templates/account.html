@@ -1,0 +1,26 @@
+{% extends "layoutV2.html" %}
+
+{% block title %}
+    Here are your account details:
+{% endblock %}
+
+{% block content %}
+<div class = "col-sm-8" style = "margin: auto">
+
+<p>Here are your account details:</p>
+<p> <b>Account name: </b> {{ username }}</p>
+<p> <b>Mars coin: </b> {{points}} coin</p>
+<p> Change password:</p>
+
+<form action="/account" method="post">
+    
+    <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control" name="currentPassword" placeholder="Current password" type="text"><br>
+            <input autocomplete="off" autofocus class="form-control" name="newPassword" placeholder="New password" type="text"><br>
+            <input autocomplete="off" autofocus class="form-control" name="confirmPassword" placeholder="Confirm password" type="text"><br>
+            <button class="btn btn-primary" type="submit">Change Password</button>
+        </div>
+    </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layoutV2.html" %}
+
+{% block title %}
+Shop
+{% endblock %}
+
+{% block content %}
+<div class = "col-sm-8" style = "margin: auto">
+<p>Are you ready to buy a plant for your garden?</p>
+
+<form action = "/buy" method = "post"  >
+
+    <select class ="form-select mx-auto w-auto" name = "name" type = "text" style = "margin: 20px">  
+        <option disabled selected ="Type of plant">Type of plant</option>
+        {% for gardenItem in gardenItems %}
+        <option value = {{gardenItem["name"]}} >{{ gardenItem["name"] }}</option>
+        {% endfor %}
+    </select>
+    
+    <input autocomplete="off" autofocus class="form-control" name="petname" placeholder="Name your plant" type="text"><br>
+    <button class="btn btn-primary" type="submit">buy</button><br>
+</form>
+</div>
+{% endblock %}

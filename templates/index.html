@@ -1,0 +1,43 @@
+{% extends "layoutV2.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<div class = "col-sm-8" style = "margin: auto">
+    <div style = "text-align: center">
+    <H1>Welcome to Elysium Planitia </h1>
+    <p>Elysium Planitia is a flat smooth surface near Mars's equator.</p>
+    <br>
+    </div>
+    
+    <div class="row align-items-start">
+        <div class="col" >
+            <div style="text-align: left">
+            <h2> Today's weather:</h2>
+            <p> <b>Date:</b> Sol # {{key}}</p>
+            <P> <b>Temperature:</b> {{temperature }} degrees Celsius</p>
+            <p> <b>Pressure:</b> {{pressure}} Pascals</p>
+            <p> <b>Wind speed:</b> {{windSpeed}} meters per second</p>
+            </div>
+        </div>
+
+        <div class="col" style="text-align: right">
+            <br>
+            <br>
+            <p> NASA's InSight Mars lander lives here. </p>
+            <p> So, it's the perfect place for your garden. </p>
+            <p> Can you keep your Mars garden alive?</p>
+    
+        </div>
+        
+    </div>
+                
+<div style="margin: 20px">
+<img src="static/marssmall.png" class = "marsimagehomepage">
+</div>
+</div>
+
+
+{% endblock %}
