@@ -61,15 +61,25 @@ def home():
 
 #to have the same info regardless of the login state
     weatherJSON = weatherCheck()
-    key = weatherJSON["sol_keys"][0]
-    temperature = weatherJSON[key]["AT"]["av"]
-    temperatureNotAverage = weatherJSON[key]["AT"]
-    pressure = weatherJSON[key]["PRE"]["av"]
-    windSpeed = weatherJSON[key]["HWS"]["av"]
-    print(temperature, "degrees celsius")
-    print(temperatureNotAverage)
-    print(pressure, "Pascals")
-    print(windSpeed, "Meters per second")
+    print(weatherJSON)
+    
+    if len(weatherJSON["sol_keys"]) > 0:
+        key = weatherJSON["sol_keys"][0]
+        temperature = weatherJSON[key]["AT"]["av"]
+        temperatureNotAverage = weatherJSON[key]["AT"]
+        pressure = weatherJSON[key]["PRE"]["av"]
+        windSpeed = weatherJSON[key]["HWS"]["av"]
+        print(temperature, "degrees celsius")
+        print(temperatureNotAverage)
+        print(pressure, "Pascals")
+        print(windSpeed, "Meters per second")
+    
+    else:
+        key = 1098
+        temperature = -60.566
+        pressure = 619.839
+        windSpeed = 5.169
+        
         
     return render_template(
         "index.html", temperature = temperature, pressure = pressure, windSpeed = windSpeed, key = key
@@ -385,16 +395,26 @@ def mygarden():
     
     else:
         weatherJSON = weatherCheck()
-        key = weatherJSON["sol_keys"][0]
-        temperature = weatherJSON[key]["AT"]["av"]
-        pressure = weatherJSON[key]["PRE"]["av"]
-        windSpeed = weatherJSON[key]["HWS"]["av"]
-        print(temperature, "degrees celsius")
-        print(pressure, "Pascals")
-        print(windSpeed, "Meters per second")
+        
+        if len(weatherJSON["sol_keys"]) > 0:
+            key = weatherJSON["sol_keys"][0]
+            temperature = weatherJSON[key]["AT"]["av"]
+            pressure = weatherJSON[key]["PRE"]["av"]
+            windSpeed = weatherJSON[key]["HWS"]["av"]
+            print(temperature, "degrees celsius")
+            print(pressure, "Pascals")
+            print(windSpeed, "Meters per second")
+       
+        else:
+            key = 1098
+            temperature = -60.566
+            pressure = 619.839
+            windSpeed = 5.169
         
         user_id = session["user_id"]
+        print(weatherJSON)
         print(user_id)
+        print(key)
         
         try:
             con = sqlite3.connect('users.db')
@@ -790,6 +810,8 @@ def buy():
             name = "Crater Crab Grass"
         elif name == "Whipper":
             name = "Whipper Willow"
+        elif not name:
+            return apology("There is no plant name!", 404)
         
         print(name)
         print(petname)
