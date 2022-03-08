@@ -838,14 +838,15 @@ def buy():
             print(temperature, "degrees celsius")
             print(pressure, "Pascals")
             print(windSpeed, "Meters per second")
+            sol = weatherJSON["sol_keys"][0]
+            
        
         else:
             key = 1098
             temperature = -60.566
             pressure = 619.839
             windSpeed = 5.169
-            
-        sol = weatherJSON["sol_keys"][0]
+            sol = 1098
         
         cur = con.cursor()
         cur.execute("INSERT INTO garden (user_id, petname, name, sol, level) VALUES (?, ?, ?, ?, 10 )", (user_id, petname, name, sol))
