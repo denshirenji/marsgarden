@@ -829,6 +829,22 @@ def buy():
             return apology("Not enough Mars Coin")
         
         weatherJSON = weatherCheck()
+        
+        if len(weatherJSON["sol_keys"]) > 0:
+            key = weatherJSON["sol_keys"][0]
+            temperature = weatherJSON[key]["AT"]["av"]
+            pressure = weatherJSON[key]["PRE"]["av"]
+            windSpeed = weatherJSON[key]["HWS"]["av"]
+            print(temperature, "degrees celsius")
+            print(pressure, "Pascals")
+            print(windSpeed, "Meters per second")
+       
+        else:
+            key = 1098
+            temperature = -60.566
+            pressure = 619.839
+            windSpeed = 5.169
+            
         sol = weatherJSON["sol_keys"][0]
         
         cur = con.cursor()
