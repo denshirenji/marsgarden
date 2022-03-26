@@ -39,7 +39,16 @@ gardenItems2 = {
     "Whipper Willow": {"image":"whipperwillow", "price":10, "tempstrength":-70, "windstrength":7, "pressurestrength": 610},
 }
 
+#make sure it is https not http
+@app.before_request
+def enforceHttpsInHeroku():
+  if request.headers.get('X-Forwarded-Proto') == 'http':
+  url = request.url.replace('http://', 'https://', 1)
+  code = 301
+  return redirect(url, code=code)
+
 # Ensure responses aren't cached
+
 @app.after_request
 def after_request(response):
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
