@@ -5,21 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "aws-sam",
-            "request": "direct-invoke",
-            "name": "domain:app.buy (python3.9)",
-            "invokeTarget": {
-                "target": "code",
-                "projectRoot": "${workspaceFolder}/",
-                "lambdaHandler": "app.buy"
-            },
-            "lambda": {
-                "runtime": "python3.9",
-                "payload": {},
-                "environmentVariables": {}
-            }
-        },
-        {
             "name": "Python: Flask",
             "type": "python",
             "request": "launch",
