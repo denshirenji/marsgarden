@@ -10,6 +10,8 @@ from werkzeug.exceptions import default_exceptions, HTTPException, InternalServe
 from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import datetime
 import time
+from mixpanel import Mixpanel
+mp = Mixpanel("76c4ab57cbbfada4001a845024d0465c")
 
 from helpers import login_required, apology, weatherCheck
 
